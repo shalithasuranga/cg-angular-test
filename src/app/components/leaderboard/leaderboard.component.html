@@ -1,0 +1,20 @@
+<div class="container">
+    <br />
+    <h2>Scoreboard</h2>
+    <br />
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let score of scores">
+            <span>{{score.name}}</span>
+            <span class="float-right">
+                <span class="badge badge-primary">{{score.mark}} - {{score.grade}}</span>
+            </span>
+        </li>
+    </ul>
+
+    <hr />
+    <div class="form-group">
+        <input type="text" placeholder="name" class="form-control" [(ngModel)]="name"/>
+        <input type="number" min="0" max="100" placeholder="mark 0-100" class="form-control" [(ngModel)]="mark" />
+        <input type="button" value="Add" class="btn btn-success" (click)="addItem();" [disabled]="!mark && !name" />
+    </div>
+</div>
